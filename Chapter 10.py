@@ -12,6 +12,41 @@ wn.bgcolor("lightgreen")
 
 tess = turtle.Turtle()
 
+def advance_state_machine():
+
+    global state_num
+
+    if state_num == 0:
+
+        tess.forward(70)
+
+        tess.fillcolor("orange")
+
+        state_num = 1
+
+        wn.ontimer(advance_state_machine, 60)
+
+    elif state_num == 1:
+
+        tess.forward(70)
+
+        tess.fillcolor("red")
+
+        wn.ontimer(advance_state_machine, 1000)
+
+        state_num = 2
+
+    else:
+
+        tess.back(140)
+
+        tess.fillcolor("green")
+
+        wn.ontimer(advance_state_machine, 1000)
+
+        state_num = 0
+
+
 
 
 
@@ -52,40 +87,6 @@ tess.shapesize(3)
 tess.fillcolor("green")
 state_num = 0
 
-def advance_state_machine():
-
-    global state_num
-
-    if state_num == 0:
-
-        tess.forward(70)
-
-        tess.fillcolor("orange")
-
-        state_num = 1
-
-        wn.ontimer(advance_state_machine, 60)
-
-    elif state_num == 1:
-
-        tess.forward(70)
-
-        tess.fillcolor("red")
-
-        wn.ontimer(advance_state_machine, 1000)
-
-        state_num = 2
-
-    else:
-
-        tess.back(140)
-
-        tess.fillcolor("green")
-
-        wn.ontimer(advance_state_machine, 1000)
-
-        state_num = 0
-
 
 
 
@@ -112,9 +113,9 @@ wn.bgcolor("lightgreen")
 
 tess = turtle.Turtle()
 
-frank = turtle.Turtle()
+tess1 = turtle.Turtle()
 
-dude = turtle.Turtle()
+tess2 = turtle.Turtle()
 
 
 
@@ -176,33 +177,33 @@ tess.fillcolor("green")
 
 
 
-frank.forward(40)
+tess1.forward(40)
 
-frank.left(90)
+tess1.left(90)
 
-frank.forward(190)
-
-
-
-frank.shape("circle")
-
-frank.shapesize(3)
-
-frank.fillcolor("red")
+tess1.forward(190)
 
 
 
-dude.forward(40)
+tess1.shape("circle")
 
-dude.left(90)
+tess1.shapesize(3)
 
-dude.forward(120)
+tess1.fillcolor("red")
 
-dude.shape("circle")
 
-dude.shapesize(3)
 
-dude.fillcolor("orange")
+tess2.forward(40)
+
+tess2.left(90)
+
+tess2.forward(120)
+
+tess2.shape("circle")
+
+tess2.shapesize(3)
+
+tess2.fillcolor("orange")
 
 
 
@@ -222,9 +223,9 @@ def advance_state_machine():
 
         tess.fillcolor("black")
 
-        frank.fillcolor("black")
+        tess1.fillcolor("black")
 
-        dude.fillcolor("orange")
+        tess2.fillcolor("orange")
 
         state_num = 1
 
@@ -232,17 +233,17 @@ def advance_state_machine():
 
         tess.fillcolor("black")
 
-        dude.fillcolor("black")
+        tess2.fillcolor("black")
 
-        frank.fillcolor("red")
+        tess1.fillcolor("red")
 
         state_num = 2
 
     else:                    # Transition from state 2 to state 0
 
-        frank.fillcolor("black")
+        tess1.fillcolor("black")
 
-        dude.fillcolor("black")
+        tess2.fillcolor("black")
 
         tess.fillcolor("green")
 
