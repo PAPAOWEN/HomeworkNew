@@ -38,7 +38,6 @@ def draw_housing():
     tess.left(90)
     tess.end_fill()
 
-
 draw_housing()
 tess.penup()
 tess.forward(40)
@@ -49,14 +48,11 @@ tess.shapesize(3)
 tess.fillcolor("green")
 state_num = 0
 
-
 advance_state_machine()
 
 wn.listen()
 
 wn.mainloop()
-
-
 
 import turtle           # Tess becomes a traffic light.
 
@@ -67,7 +63,6 @@ wn.bgcolor("lightgreen")
 tess = turtle.Turtle()
 tess1 = turtle.Turtle()
 tess2 = turtle.Turtle()
-
 
 def draw_housing():
 
@@ -83,7 +78,6 @@ def draw_housing():
     tess.left(90)
     tess.end_fill()
 
-
 draw_housing()
 
 tess.penup()
@@ -91,12 +85,8 @@ tess.penup()
 # Position tess onto the place where the green light should be
 
 tess.forward(40)
-
 tess.left(90)
-
 tess.forward(50)
-
-
 tess.shape("circle")
 tess.shapesize(3)
 tess.fillcolor("green")
@@ -116,47 +106,27 @@ tess2.fillcolor("orange")
 state_num = 2
 
 def advance_state_machine():
-
     global state_num
-
     if state_num == 0:       # Transition from state 0 to state 1
-
         tess.fillcolor("black")
-
         tess1.fillcolor("black")
-
         tess2.fillcolor("orange")
-
         state_num = 1
 
     elif state_num == 1:
-
         tess.fillcolor("black")
-
         tess2.fillcolor("black")
-
         tess1.fillcolor("red")
-
         state_num = 2
 
     else:                    # Transition from state 2 to state 0
-
         tess1.fillcolor("black")
-
         tess2.fillcolor("black")
-
         tess.fillcolor("green")
-
         state_num = 0
 
-
-
 # Bind the event handler to the space key.
-
 wn.onkey(advance_state_machine, "space")
 
-
-
 wn.listen()                      # Listen for events
-
 wn.mainloop()
